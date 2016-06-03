@@ -1,0 +1,25 @@
+{
+    "debug": true,
+    "database": {{ default .Env.DATABASE "\"root:root@tcp(127.0.0.1:3306)/domeos?loc=Local&parseTime=true\"" }},
+    "maxIdle": {{ default .Env.MAXIDLE "100" }},
+    "http": {
+        "enabled": {{ default .Env.HTTP_ENABLED "true" }},
+        "listen": {{ default .Env.HTTP_LISTEN "\"0.0.0.0:6066\"" }}
+    },
+    "redis": {
+        "addr": {{ default .Env.REDIS_ADDR "\"127.0.0.1:6379\"" }},
+        "maxIdle": {{ default .Env.REDIS_MAXIDLE "5" }}
+    },
+    "queue": {
+        "sms": {{ default .Env.QUEUE_SMS "\"/sms\"" }},
+        "mail": {{ default .Env.QUEUE_MAIL "\"/mail\"" }}
+    },
+    "worker": {
+        "sms": {{ default .Env.WORKER_SMS "10" }},
+        "mail": {{ default .Env.WORKER_mail "50" }}
+    },
+    "api": {
+        "sms": {{ default .Env.API_SMS "\"http://11.11.11.11:8000/sms\"" }},
+        "mail": {{ default .Env.API_MAIL "\"http://11.11.11.11:9000/mail\"" }}
+    }
+}
